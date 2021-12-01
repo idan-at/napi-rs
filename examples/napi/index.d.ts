@@ -19,9 +19,7 @@ export function createBigInt(): BigInt
 export function createBigIntI64(): BigInt
 export function getCwd(callback: (arg0: string) => void): void
 /** napi = { version = 2, features = ["serde-json"] } */
-export function readFile(
-  callback: (arg0: Error | undefined, arg1?: string | undefined | null) => void,
-): void
+export function readFile(callback: (arg0: Error | undefined, arg1?: string | undefined | null) => void): void
 export function eitherStringOrNumber(input: string | number): number
 export function returnEither(input: number): string | number
 export function either3(input: string | number | boolean): number
@@ -36,7 +34,7 @@ export enum Kind {
   /** Kills birds */
   Cat = 1,
   /** Tasty */
-  Duck = 2,
+  Duck = 2
 }
 /** You could break the step and for an new continuous value. */
 export enum CustomNumEnum {
@@ -47,22 +45,17 @@ export enum CustomNumEnum {
   Six = 6,
   Eight = 8,
   Nine = 9,
-  Ten = 10,
+  Ten = 10
 }
 export function enumToI32(e: CustomNumEnum): number
 export function throwError(): void
 export function createExternal(size: number): ExternalObject<number>
 export function createExternalString(content: string): ExternalObject<string>
 export function getExternal(external: ExternalObject<number>): number
-export function mutateExternal(
-  external: ExternalObject<number>,
-  newVal: number,
-): void
+export function mutateExternal(external: ExternalObject<number>, newVal: number): void
 export function tsRename(a: { foo: number }): string[]
 export function xxh64Alias(input: Buffer): BigInt
-export function mapOption(
-  val?: number | undefined | null,
-): number | undefined | null
+export function mapOption(val?: number | undefined | null): number | undefined | null
 export function add(a: number, b: number): number
 export function fibonacci(n: number): number
 export function listObjKeys(obj: object): Array<string>
@@ -88,15 +81,14 @@ export function concatLatin1(s: string): string
 export function setSymbolInObj(symbol: symbol): object
 export function createSymbol(): symbol
 export function withoutAbortController(a: number, b: number): Promise<number>
-export function withAbortController(
-  a: number,
-  b: number,
-  signal: AbortSignal,
-): Promise<number>
+export function withAbortController(a: number, b: number, signal: AbortSignal): Promise<number>
 export function callThreadsafeFunction(callback: (...args: any[]) => any): void
 export function threadsafeFunctionThrowError(cb: (...args: any[]) => any): void
 export function threadsafeFunctionFatalMode(cb: (...args: any[]) => any): void
 export function getBuffer(): Buffer
+export function convertU32Array(input: Uint32Array): Array<number>
+export function createExternalTypedArray(): Uint32Array
+export function mutateTypedArray(input: Float32Array): void
 /**
  * `constructor` option for `struct` requires all fields to be public,
  * otherwise tag impl fn as constructor
@@ -124,7 +116,7 @@ export class Animal {
 export class Blake2BHasher {
   static withKey(key: Blake2bKey): Blake2BHasher
 }
-export class Blake2BKey {}
+export class Blake2BKey { }
 export class Context {
   maybeNeed?: boolean | undefined | null
   constructor()
